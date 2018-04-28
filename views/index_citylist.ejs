@@ -1,0 +1,14 @@
+<% data.provinces.forEach(function (item){ %>
+<div class="region-list">
+						<div class="provinces-title">
+							<span><%= item.name %></span>
+						</div>
+						<div class="citylist">
+							<ul class="clearfix">
+							<% item.citys.forEach(function(item) {%>
+								<li><%= item %></li>
+							<% }) %>	
+							</ul>
+						</div>
+		</div>
+		<% }) %>

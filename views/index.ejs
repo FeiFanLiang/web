@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="referrer" content="no-referrer" />
+	<link rel="stylesheet" href="css/comon.css">
+	<link rel="stylesheet" href="css/index.css">
+	
+	<title>首页</title>
+	<style>
+
+	</style>
+
+	
+</head>
+<body>
+	<%- include headnav %>
+	<div class="container">
+	<section class="headslider-warp">
+		<div class="corner-btn">
+				<span class="search-btn icon-search">
+					
+				</span>
+				<span class="up-btn icon-up"></span>
+			</div>
+		<div class="topsearch">
+			<div class="selecsearch">
+				<span>搜索</span>
+				<span>丨</span>
+			</div>
+			<input type="text" placeholder="电影名，类型，导演" id="serach_input">
+			<div class="search-result">
+			<div class="result-warp">
+			
+				</div>	
+			</div>		
+		</div>
+		<div id="headslider">
+			<div class="slider">
+				
+					<div class="slider-unit active" style="background-image: url(http://img.dota2.com.cn/maps/34/53/34532f12e5045da184614ae9629696fb1523196432.jpg);">
+						<a href="">
+							<img src="" alt="">
+						</a>
+					</div>
+					<div class="slider-unit" style="background-image: url(http://img.dota2.com.cn/maps/f4/f1/f4f1d35963e9e077caabf1fa05bb280e1519637937.jpg);">
+						<a href="">
+							<img src="" alt="">
+						</a>
+					</div>
+					<div class="slider-unit" style="background-image: url(http://img.dota2.com.cn/maps/bb/e7/bbe7145128bd62e9d6118a78c8a99b181521807457.jpg);">
+						<a href="">
+							<img src="" alt="">
+						</a>
+					</div>
+					<div class="slider-unit" style="background-image: url(http://img.dota2.com.cn/maps/bb/e7/bbe7145128bd62e9d6118a78c8a99b181521807457.jpg);">
+						<a href="">
+							<img src="" alt="">
+						</a>
+					</div>
+				
+			</div>
+			<div class="slider-control">
+				<ul class="clearfix">
+					<li class="control-unit slider-control-active"></li>
+					<li class="control-unit"></li>
+					<li class="control-unit"></li>
+					<li class="control-unit"></li>
+				</ul>
+			</div>
+		</div>	
+	</section>
+	<section class="movieregion">
+		<div class="hotmovie-warp clearfix">
+			<div class="aside">
+				<div class="aside-title-warp">
+					<span class="title">今日票房</span>
+				</div>
+				<div class="rating">
+					<ul class="rating-list">
+						<% for(var i =0;i<9;i++){ %>
+						<li class="rating-item">	
+							<i class="rating-rank"><%= i+1 %></i>
+							<div>
+						<h3 class="rating-item-title"><%= rating.data[i].MovieName %></h3>
+						<p class="rating-item-num"> <%= rating.data[i].BoxOffice %>万  </p>
+							</div>	
+							
+						</li>
+						<% } %>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="hotmovie">
+				<div class="title-warp">
+					
+					<span class="title">
+					正在热映
+					<span class="hot-num">
+						<%= theaters.total %>部
+					</span>
+					</span>
+					<div class="region">
+					<i class="icon-position"></i>
+						<span class="region-current">北京</span>
+					<i class="icon-down"></i>
+					<div class="region-selec">
+					<i class="close-btn icon-close" id='close-btn'></i>
+					<div class="region-list-warp">
+						
+					</div>	
+					</div>
+					</div>
+				</div>
+				<div class="hotList">
+					<div class="list-main">
+						<a href="movie/<%= theaters.subjects[0].id %>">
+							<img src="<%= theaters.subjects[0].images.small %>" alt="">
+						</a>
+						<div class="main-datial">
+						 <div class="main-warp">
+							<h3 class="main-title">
+							<%= theaters.subjects[0].title %>
+							</h3>
+							<p class="main-land">
+							 <%= theaters.subjects[0].genres %>
+							</p>
+							<p class="main-time">
+							时长:<%= theaters.subjects[0].durations %>
+							</p>
+							<p class="main-dec">
+							<i class="icon-left"></i>
+							<% for(var i=0;i<theaters.subjects[0].casts.length;i++){%>
+								<%= theaters.subjects[0].casts[i].name %>
+							<% } %>
+							</p>
+						 </div>
+							<div class="buybtn-warp">
+								<a href="" class="buybtn">选座购票</a>
+							</div>
+						</div>
+					</div>
+					<% for(var i=1;i<theaters.subjects.length;i++){ %>
+					<div class="list-item">
+						<a href="movie/<%= theaters.subjects[i].id %>" class="item-link">
+							<img src="<%= theaters.subjects[i].images.small %>" alt="">
+							<span class="item-title"><%= theaters.subjects[i].title %></span>
+							<div class="item-mask"></div>
+							<i class="item-rating"><%= theaters.subjects[i].rating.average %></i>
+						</a>
+						<div class="item-mask">
+							<span>导演</span>
+							<span>类型</span>
+							<span>上映时间</span>
+						</div>
+						<div class="buybtn-warp">
+							<a class="buybtn" href="#">选座购票</a>
+						</div>
+					</div>
+					 <% } %>
+					
+				</div>
+				<div class="more">
+						<a href="" class="more-btn">
+							查看更多
+						</a>
+					</div>
+			</div>
+			
+		</div>
+		<div class="newmovie-warp">
+			
+			<div class="newmovie">
+				<div class="title-warp">
+					<span class="title">即将上映</span>
+					<span class="new-num">
+						<%= coming.total %>部
+					</span>
+				</div>
+				<div class="newList">
+				<% for(var i=0;i<coming.subjects.length;i++){ %>	
+					<div class="list-item">
+						<a href="movie/<%= coming.subjects[i].id %>" class="item-link">
+							<img src="<%= coming.subjects[i].images.small %>" alt="">
+							<span class="item-title"><%= coming.subjects[i].title %></span>
+							<div class="item-mask"></div>
+							
+
+						</a>
+						
+						<div class="buybtn-warp">
+							<a class="buybtn" href="#">立即预定</a>
+
+						</div>
+						<div class="item-mainland">
+							<span class="mainland-date" data-date="<%- coming.subjects[i].mainland_pubdate -%>">		
+							</span>
+						</div>
+					</div>
+				 <% } %>		
+				</div>
+				<div class="more">
+						<a href="" class="more-btn">
+							查看更多
+						</a>
+					</div>			
+			</div>
+			
+		</div>	
+		<div class="top250-warp">
+			<div class="newmovie">
+				<div class="title-warp">
+					<span class="title">高分电影</span>
+					
+				</div>
+				<div class="newList">	
+				 <% for(var i=0;i<top.subjects.length;i++){ %>
+					<div class="list-item">
+							<a href="movie/<%= top.subjects[i].id %>" class="item-link">
+								<img src="<%= top.subjects[i].images.small %>" alt="">
+								<span class="item-title"><%= top.subjects[i].title %></span>
+								<div class="item-mask"></div>
+								<i class="item-rating"><%= top.subjects[i].rating.average %>
+								</i>
+
+							</a>
+							
+							
+					</div>
+				<% } %>			
+				</div>
+				<div class="more">
+						<a href="" class="more-btn">
+							查看更多
+						</a>
+					</div>			
+			</div>
+			
+		</div>
+	</section>
+	<%- include footer %>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div class="result-warp">
+	<div class="result-title">
+				共有<span class="result-num"><%= data.count %></span>条搜索结果
+			</div>
+				<ul>
+				<% data.subjects.forEach(function(item){ %>
+					<li>
+					<a href="">
+						<div class="result-item clearfix">
+							<div class="item-left">
+								<img src="<%= item.images.small %>" alt="">
+							</div>
+							<div class="item-right">
+								<div class="item-info">
+									<span><%= item.title %></span>
+									<span>导演:<% if(item.directors[0]){ %>
+									<%= item.directors[0].name %>
+									<%}%>
+									</span>
+									<span>类型：<%= item.genres %></span>
+									<span>时长：<%= item.durations %></span>
+									<span>时间：<%= item.year %>年</span>
+								</div>
+							</div>
+						</div>
+						</a>
+					</li>
+				<% }) %>
+					
+				</ul>
+</div>

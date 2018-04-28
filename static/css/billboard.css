@@ -1,0 +1,160 @@
+section{
+	width: 1400px;
+	margin:0 auto;
+}
+/*顶部tab*/
+.tab-select{
+	width: 500px;
+	margin:0 auto;
+	
+}
+.tab-select>ul>li{
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+.tab-select>ul>li>a{
+	display: block;	
+	border:1px solid #333;
+	border-right-width: 0;
+	padding: 0px 20px;
+	font-size: 15px;
+	color: #999;
+}
+.tab-select>ul>li>a:hover,.tab-select .active{
+	border-color: #999;
+	border-right-width: 1px;
+	color: #ccc;
+}
+
+.tab-select>ul>li:last-child>a{
+	border-right-width: 1px;
+}
+.billboard-list>div{
+	width: 900px;
+	margin:0 auto;
+	padding: 40px 0;
+	display: none;
+}
+.billboard-list>div>ul>li:first-child i{
+	font-size: 0;
+	background: url(/images/crown-icon.png);
+	background-color: #f68b20;
+}
+.billboard-list>div>ul>li:nth-child(2) i,.billboard-list>div>ul>li:nth-child(3) i{
+	background-color: #c59c07;
+}
+.billboard-list .weekly{
+	display: block;
+}
+
+.movie-list{
+	
+	padding: 10px;
+	margin-bottom: 30px;
+
+}
+.movie-item{
+	position: relative;
+}
+.item-rank{
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	margin-top:-25px;
+	margin-left:-80px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	background-color: #424040;
+
+}
+.item-left{
+	float: left;
+}
+.item-left a img{
+	width: 170px;
+	height: 220px;
+}
+.item-right{
+	float: right;
+	
+	padding-left: 20px;
+	margin-left: 30px;
+	vertical-align:middle;
+	height: 219px;
+	line-height: 219px;
+	border-bottom: 1px solid #5a5a5a;
+}
+.item-right>div{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+}
+.item-title{
+	font-size: 26px;
+}
+.item-detail{
+	width: 460px;
+}
+.item-score{
+	font-size: 56px;
+	width: 180px;
+	text-align: right;
+	color: #c7b104;
+}
+.item-casts{
+	font-size: 18px;
+	margin:20px 0;
+}
+.item-land{
+	font-size: 16px;
+}
+
+@media(max-width: 1200px){
+	.billboard {
+		width: 1000px;
+	}
+
+}
+@media(max-width: 992px){
+	
+	.billboard{
+		width: 600px;
+	}
+	.movie-list{
+		width: 600px;
+	}
+	.item-detail{
+		width: 200px;
+	}
+	.item-score{
+		width: 90px;
+	}
+	.billboard-list>div{
+		width: 600px;
+	}
+
+
+}
+@media(max-width: 768px){
+	.billboard{
+		width: 400px;
+	}
+	.movie-list{
+		width: 400px;
+	}
+	.item-right{
+		margin-left: 0px;
+	}
+	.item-right .item-score{
+		display: none;
+	}
+	.billboard-list>div{
+		width: 400px;
+	}
+}
+

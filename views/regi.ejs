@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="../css/comon.css">
+	<link rel="stylesheet" href="../css/regin.css">
+	<title>注册</title>
+</head>
+<body>
+<%- include headnav %>
+<div class="container">
+<section class="regin" id="regi_form">
+	<div class="form-warp">
+		<div class="form-title">
+			<h3>新会员注册</h3>
+		</div>
+		<div class="username">
+			<input type="text" placeholder="输入您的用户名" id="username">
+			<div class="error-msg">用户名为4-12位数字和字母</div>
+		</div>
+		<div class="password">
+			<input type="password" placeholder="输入您的密码" id="password">
+			<div class="error-msg">密码为4-16位数字,字母或特殊符号</div>
+		</div>
+		<div class="phonenum">
+			<input type="text" placeholder="输入您的常用手机号码" id="phonecall">
+			<div class="error-msg">请输入您常用的11位手机号码</div>
+		</div>
+		<div class="regcode">
+			<input type="text" placeholder="输入您的验证码" id="veriCode">
+			<div class="error-msg">验证码输入有误,请检查后重新输入</div>
+		</div>
+		<div class="submit">
+			<div>注册即代表您已同意<a href="" class="policy">橘子电影</a>的服务条款</div>
+			<a href="/regin/news" id="submit-btn">注 册</a>
+		</div>
+		<div class="redir">
+			<p>已经有了账号？进入<a href="/login" class="login">登录</a>界面</p>
+		</div>
+	</div>
+</section>
+<%- include footer %>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="js/regin.js"></script>
+</body>
+</html>

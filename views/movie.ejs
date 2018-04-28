@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="referrer" content="no-referrer" />
+	<link rel="stylesheet" href="../css/comon.css">
+	<link rel="stylesheet" href="../css/movie.css">
+	<title>榜单</title>
+</head>
+<body>
+	<%- include headnav %>
+	<div class="container">
+	<section class="banner">
+			<div class="banner-warp clearfix">
+				<div class="banner-left">
+						<img src="<%= data.images.large %>" alt="">
+				</div>
+				<div class="banner-right">
+					<div class="movie-detail">
+						<h3><%= data.title %></h3>
+						<span><%= data.genres %></span>
+						<span><%= data.countries %></span>
+						<span>上映时间:<%= data.pubdate %></span>
+					</div>
+					<div class="movie-buybtn">
+						<a href="" class="wish">想看</a>
+						<a href="" class="score">评分</a>
+						<a href="" data-price='{"id":<%= data.id %>,"price":20}' class="buy">特惠购票</a>
+					</div>
+					<div class="movie-star">
+						<div class="movie-index">
+							<p>用户评分</p>
+							<div class="movie-score">
+								<span><%= data.rating.average %></span>
+								<i class="icon-star">
+
+								</i>
+							</div>
+						</div>
+						<div class="movie-index">
+							<div class="movie-rating">
+								<p>评分人数</p>
+								<span><%= data.ratings_count %>人</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	<section class="movie-msg">
+		<div class="msg-tab clearfix" id="msg_tab">
+			<div class="active">介绍</div>
+			<div>演职人员</div>
+			<div>花絮</div>
+			<div>图集</div>
+		</div>
+		<div class="content">
+			<div class="main-intro">
+				<div class="movie-intro">
+					<div class="intro-title">剧情简介</div>
+					<div class="intro-main">
+						<p>
+							<%= data.summary %>
+						</p>
+					</div>
+				</div>
+				<div class="movie-cats">
+					<div class="intro-title">
+						演职人员
+
+					</div>
+					<div class="cats-main clearfix">
+						<ul>
+							<li>
+								<div class="item-dir">导演</div>
+								<div>
+									<a href="" class="normal-link">
+									<% if(data.directors[0].avatars){ %>
+										<img src="<%= data.directors[0].avatars.small %>" alt="">
+									<% }else{ %>
+									<img src="https://img1.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png" alt="">
+									<% } %>
+									</a>
+								</div>
+								<div class="item-dirname">
+									
+										<span><%= data.directors[0].name %></span>
+										
+										<span><%= data.directors[0].name_en %></span>
+									
+								</div>
+							</li>
+							<% for(var i=0;i<data.casts.length;i++){ %>
+							<li>
+
+								<div class="item-casts">演员</div>
+								<div>
+									<a href="" class="normal-link">
+											<% if(data.casts[i].avatars){ %>
+									<img src="<%= data.casts[i].avatars.medium %>" alt="">
+								  <%}else{ %>
+								  <img src="https://img1.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png" alt="">
+								  <% } %>
+									</a>
+								</div>
+								<div class="item-castsname">
+									<span><%= data.casts[i].name %></span>
+									<span><%= data.casts[i].name_en %></span>
+								</div>
+							</li>
+							<% } %>
+						</ul>
+
+					</div>
+				</div>
+				<div class="movie-images">
+					<div class="intro-title">
+						图集
+
+					</div>
+					<div class="images-list">
+					<% if(data.photos.length >= 4){for(var i=0;i<4;i++) { %>
+					
+						<div class="intro-images">
+							<img src="<%= data.photos[i].image %>" alt="">
+						</div>
+					<% }} else{for(var i=0;i<data.photos.length;i++) { %>
+						<div class="intro-images">
+							<img src="<%= data.photos[i].image %>" alt="">
+						</div>
+						<% }} %>
+					</div>
+					</div>
+					<div class="comment-list">
+						<div class="intro-title">
+							热门短评
+							<a href="" class="comment-entry">写短评</a>
+						</div>
+						<div class="comment-main">
+							<ul>
+							<% for(var i=0;i<data.popular_comments.length;i++){ %>
+								<li>
+									<div class="main">
+										<div class="user-head">
+											<img src="<%= data.popular_comments[i].author.avatar %>" alt="">
+										</div>
+										<div class="main-content">
+										<div class="user">
+											<div class="user-name">
+												<%= data.popular_comments[i].author.name %>
+											</div>
+											<div class="subtime">
+												<%= data.popular_comments[i].created_at %>
+											</div>
+											
+										</div>
+											
+											
+											<div class="comment">
+												<%= data.popular_comments[i].content %>
+											</div>
+										</div>
+									</div>
+								</li>
+							<% } %>	
+							</ul>
+						</div>
+				</div>
+			</div>
+			<div class="casts-intro">
+				<div class="cats-main clearfix">
+						<ul>
+							<li>
+								<div class="item-dir">导演</div>
+								<div>
+									<a href="" class="normal-link">
+									<% if(data.directors[0].avatars){ %>
+										<img src="<%= data.directors[0].avatars.small %>" alt="">
+								<%	}else{ %>
+										<img src="https://img1.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png" alt="">
+								<%	} %>
+									</a>
+								</div>
+								<div class="item-dirname">
+									<a href="">
+										<span><%= data.directors[0].name %></span>
+										<span><%= data.directors[0].name_en %></span>
+									</a>
+								</div>
+							</li>
+							<% for(var i=0;i<data.casts.length;i++){ %>
+							<li>
+
+								<div class="item-casts">演员</div>
+								<div>
+									<a href="" class="normal-link">
+									<% if(data.casts[i].avatars){ %>
+									<img src="<%= data.casts[i].avatars.medium %>" alt="">
+								  <%}else{ %>
+								  <img src="https://img1.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png" alt="">
+								  <% } %>
+									</a>
+								</div>
+								<div class="item-castsname">
+									<a href="">
+									<span> <%= data.casts[i].name %></span>
+									<span> <%= data.casts[i].name_en %></span>
+
+									</a>
+
+								</div>
+							</li>
+							<% } %>
+							<% for(var i=0;i<data.writers.length;i++){ %>
+							<li>
+				
+								<div class="item-casts">编剧</div>
+								<div>
+									<a href="" class="normal-link">
+									<% if(data.writers.avatars) {%>
+										<img src="<%= data.writers[i].avatars.small %>" 
+										alt="">
+									<% }else{ %>
+										<img src="https://img1.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png" alt="">
+									<% } %>
+									</a>
+								</div>
+								<div class="item-castsname">
+									<a href="">
+									
+									<span> <%= data.writers[i].name %></span>
+									<span> <%= data.writers[i].name_en %></span>
+									</a>
+
+								</div>
+							</li>
+							<% } %>
+						</ul>
+
+					</div>
+			</div>
+			<div class="bloopes">
+			
+			<% for(var i=0;i<data.bloopers.length;i++){ %>
+				<div class="bloopers-images">
+				<a href="<%= data.bloopers[i].resource_url %>" class="play-btn">
+				<i class="icon-play"></i>
+				</a>				
+				<span class="images-mask"></span>
+				<img src="<%= data.bloopers[i].small %>" alt="">
+					
+					
+				<span> <%= data.bloopers[i].title %></span>
+				</div>
+				
+			<% } %>
+
+			<div class="video-mask">
+					<div class="video">
+					<i class="icon-close"></i>
+						<video src="" autoplay="autoplay" controls="controls">
+							您的浏览器版本过低，不支持此视频播放，请更换新版本浏览器
+						</video>
+					</div>
+			</div>
+			</div>
+			<div class="images-list">
+				<% for(var i=0;i<data.photos.length;i++) {%>
+						<div class="intro-images">
+						 
+							<img src="<%= data.photos[i].image %>" alt="">
+						
+						</div>
+					<% } %>
+			</div>
+		</div>
+	</section>
+	<%- include footer %>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="../js/movie.js"></script>
+</body>
+</html>

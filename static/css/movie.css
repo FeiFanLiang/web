@@ -1,0 +1,320 @@
+/*banner区域*/
+.banner{
+	background: url(http://ms0.meituan.net/mywww/banner_bg.f7fd103e3b8c16b6f449cce43fc57f45.png);
+	background-repeat: repeat-x;
+	margin-bottom: 100px;
+	height: 380px;
+	
+}
+.banner-warp,.movie-msg{
+	width: 1400px;
+	margin:0 auto;
+	padding-top: 1px;
+}
+.banner-left{
+	float: left;
+	margin: 20px;
+	transform: translateY(47px);
+	width: 240px;
+	box-sizing: border-box;
+}
+.banner-left>img{
+	display: block;
+	height:  322px;
+	width: 232px;
+	border: 4px solid rgba(137, 46, 160, 0.31);
+}
+.banner-right{
+	position: relative;
+	margin-left: 300px;
+	margin-top: 70px;
+	
+
+}
+
+.movie-detail>span{
+	display: block;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.movie-detail>h3{
+	font-size: 26px;
+}
+.movie-buybtn{
+	position: absolute;	
+	bottom: -140px;
+	text-align: center;
+}
+.movie-buybtn>a{
+	display: inline-block;
+	padding:10px 32px;
+	background-color: rgba(198,138,202,0.2);
+	border-radius: 2px;
+
+}
+.movie-star{
+	position: absolute;
+	bottom: -100px;
+	left: 300px;
+
+}
+.movie-buybtn .buy{
+	display: block;
+	padding: 10px 0px;
+	margin-top: 10px;
+	color: white;
+	background-color: #f96666;
+}
+/*banner区域*/
+
+/*影片详情区域*/
+.msg-tab{
+	border-bottom: 2px solid #3e3e3e;
+	font-size: 20px;
+	height: 47px;
+}
+.msg-tab>div{
+	float: left;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.msg-tab>div:hover,.msg-tab .active{
+	color: #ccc;
+	border-bottom: 2px solid #ccc;
+}
+.intro-title{
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	margin-bottom: 50px;
+	padding-left: 15px;
+	border-left: 5px solid #ec8989;
+
+}
+.intro-images{
+
+}
+.content>div{
+	display: none;
+	margin-top: 75px;
+	
+}
+.content .main-intro{
+	display: block;
+}
+.main-intro>div{
+	margin-bottom: 90px;
+}
+.casts-more{
+	float: right;
+}
+.cats-main{
+	padding: 30px 0px;
+}
+.cats-main>ul>li{
+	float: left;
+	margin-right: 20px;
+}
+.item-dir,.item-casts{
+	margin-bottom: 20px;
+}
+.item-dirname span,.item-castsname span{
+	display: block;
+}
+.item-dirname,.item-castsname{
+	margin-top: 20px;
+	text-align: center;
+}
+.normal-link{
+	display: block;
+	
+	width: 140px;
+	height: 200px;
+}
+.normal-link img{
+	width: 100%;
+	height:100%;
+}
+.intro-images>img{
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+	
+}
+.images-list>div{
+	display: inline-block;
+}
+.comment-entry{
+	float: right;
+	padding: 10px 25px;
+	text-align: center;
+	color: red;
+	border: 1px solid red;
+	border-radius: 25px;
+	
+}
+.user-head{
+	float: left;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user-head>img{
+	width: 50px;
+}
+.main-content{
+	
+	margin-left: 80px;
+}
+.comment{
+	margin-top: 30px;
+	padding-bottom: 30px;
+	color: #b9b6b7;
+	border-bottom: 1px solid #424040;
+}
+.subtime{
+	color: #ccc;
+}
+.user-name{
+	color: white;
+	font-size: 18px;
+}
+.comment-main>ul>li{
+	margin-bottom: 30px;
+
+}
+.comment-main>ul>li:last-child .comment{
+	border: 0;
+}
+.icon-star{
+	display: inline-block;
+	overflow: hidden;
+}
+.icon-star:after{
+	content: "\e9d9\e9d9\e9d9\e9d9\e9d9";
+	color: yellow;
+	font-size: 16px;
+} 
+.bloopers-images{
+position: relative;
+display: inline-block;
+width: 230px;
+height: 160px;
+
+}
+.bloopers-images img{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0);
+}
+.bloopers-images span{
+	display: block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.bloopers-images .images-mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0, 0, 0, 0.48);
+}
+
+.play-btn{
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	
+
+}
+.icon-play{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.icon-play::after{
+	content: '\ea15';
+	font-size: 50px;
+	color:#f9f9f9;
+}
+/*视频播放层*/
+.video-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(10, 9, 9, 0.7);
+	display: none;
+	z-index: 2;
+}
+.bloopes .video{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -180px;
+	margin-left:-320px;
+	width: 640px;
+	height: 360px;
+}
+.video video{
+	width: 100%;
+	height: 100%;
+}
+.icon-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	z-index: 1;
+}
+.icon-close::after{
+	content: '\ea0f';
+	font-size: 16px;
+}
+
+@media(max-width: 1200px){
+	.banner-warp,.movie-msg{
+		width: 1000px;
+	}
+}
+@media(max-width: 992px){
+	
+	.banner-warp,.movie-msg{
+		width: 600px;
+	}
+
+	.intro-images>img{
+		width: 230px;
+		height: 135px;
+	}
+}
+@media(max-width: 768px){
+	.banner-warp,.movie-msg{
+		width: 400px;
+	}
+	.normal-link{
+		width: 100px;
+		height: 135px;
+	}
+	.intro-images>img{
+		width: 180px;
+		height: 110px;
+	}
+	.item-dirname,.item-castsname{
+		font-size: 14px;
+	}
+	.movie-star{
+		display: none;
+	}
+	.movie-detail,.movie-buybtn{
+		width: 200px;
+	}
+}

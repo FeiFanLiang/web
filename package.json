@@ -1,0 +1,23 @@
+{
+  "name": "zuop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "browser-sync": "^2.23.7",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0",
+    "request": "^2.85.0",
+    "supervisor": "^0.12.0"
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="css/comon.css">
+	<link rel="stylesheet" href="css/billboard.css">
+	<title>榜单</title>
+</head>
+<body>
+	<%- include headnav %>
+	<div class="container">
+	<section class="billboard">
+		<div class="billboard-tab">
+			<div class="tab-select clearfix">
+				<ul>
+					<li><a href="?name=weekly" class="active">热映口碑榜</a></li>
+					<li><a href="?name=new_movies">本周新片榜</a></li>
+					<li><a href="?name=top250">豆瓣top250</a></li>
+					<li><a href="?name=us_box"> 北美票房榜</a></li>
+				</ul>
+			</div>
+			<div class="billboard-list">
+				<div class="new-movies" id="new_movies">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="top250" id="top250">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="us-box" id="us_box">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="weekly" id="weekly">
+					<ul>
+					    <% data.subjects.forEach(function (item,index){ %>
+						<li class="movie-list">
+							<div class="movie-item clearfix">
+								<i class="item-rank">
+									<%= index+1 %>
+								</i>
+								<div class="item-left">
+									<a href="/movie/<%= item.subject.id %>" 
+									class="item-link">
+										<img src="<%= item.subject.images.small %>" alt="">
+									</a>
+								</div>
+								<div class="item-right">
+									<div class="item-detail">
+										<a href="/movie/<%= item.subject.id %>">
+											<span class="item-title"><%= item.subject.title %>
+											</span>
+										</a>
+										<p class="item-casts">主演：
+										<% item.subject.casts.forEach(function (item) { %>
+										 <%= item.name %>
+										 <% }) %>
+										</p>
+										<p class="item-land">
+										<% if(item.subject.mainland_pubdate!=""){%>
+										上映时间:
+										<%=item.subject.mainland_pubdate %>
+										<%}%>
+										</p>
+									</div>
+									<div class="item-score">
+										<span>
+											<%= item.subject.rating.average %>
+										</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<% }) %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<%- include footer %>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="../js/billboard.js"></script>
+</body>
+</html>

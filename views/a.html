@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/croppic.css">
+	<style>
+		#demo{position: relative;
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		#img{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id='demo'>
+	</div>
+	<div id="img"></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="../js/croppic.js"></script>
+<script>
+	var cropperHeader = new Croppic('demo');
+</script>
+</html>

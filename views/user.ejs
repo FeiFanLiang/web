@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="../css/comon.css">
+	<link rel="stylesheet" href="../css/user.css">
+	<title>榜单</title>
+</head>
+<body>
+	<%- include headnav %>
+	<div class="container">
+		<section class="user-detail">
+			<div class="user-page clearfix">
+				<div class="user-nav">
+					<span class="nav-title">个人中心</span>
+					<ul class="clearfix">
+						<li>
+							<a href="/user/userdata" id="order_data">
+								<i></i>
+								<span>我的订单</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i></i>
+								<span>我的资料</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i></i>
+								<span>我的优惠</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i></i>
+								<span>我的商城</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="user-data">
+					<div class="overview-warp active">
+						<div class="data-main clearfix">
+							<div class="main-warp clearfix">
+								<div class="user-head">
+									<a href="javascript:;" id="midify_head">修改头像</a>
+									<img src="<%= data.avatar %>" alt="">
+								</div>
+								<div class="midity-avatar">
+									<div class="head-show">
+										<img src="<%= data.avatar %>" alt="" id="current_head">
+									</div>
+									<div class="head-btn">
+										<a href="javascript:;" class="submit_a">确定</a>
+										<a href="javascript:;" id="upload_btn">上传头像</a>
+										<a href="javascript:;" id="close_btn">取消</a>
+										<input type="file" title="上传头像" id="upload" name="headimg">
+										<input type="submit" id="submit_btn">
+									</div>
+								</div>
+								<div class="user-name">
+									<span>
+										欢迎回来,<%= data.nickname %>
+									</span>
+
+								</div>
+							</div>
+						</div>
+						<div class="user-consu clearfix">
+							<div class="user-balan">
+								<span class="balan-num">
+									<% if(data.accbalan){ %>
+									<%= data.accbalan %>
+									<% }else{ %>
+									<%= 0 %>
+									<% } %>
+								</span>
+								我的余额
+							</div>
+							<div class="user-order">
+								<span class="order-num">
+									<% if(locals.cartnum){ %>
+									<%- locals.cartnum %> <% } else{%>
+									<%= 0 %> <% } %>
+								</span>
+								我的订单
+							</div>
+							<div class="user-discout">
+								<span class="discout-num">
+									0
+								</span>
+								我的优惠券
+							</div>
+						</div>
+					</div>
+					<div class="order-warp">
+						<div class="order-main">
+							<div class="tab-head">
+								<ul class="clearfix">
+									<li class="active"><a href="">全部</a></li>
+
+								</ul>
+							</div>
+							<div class="tab-title">
+								<ul class="clearfix">
+									<li><span>订单编号</span></li>
+									<li><span>订单名称</span></li>
+									<li><span>订单价格</span></li>
+									<li><span>订单时间</span></li>
+								</ul>
+							</div>
+
+
+
+						</div>
+					</div>
+					<div class="data-warp">
+						<div class="data-title">
+							<span>我的资料</span>
+							<a href="javascript:;" class="modify-btn">修改</a>
+							<div class="modify-form">
+								<div class="form-warp">
+									<div class="form-title">
+										<h3>修改资料</h3>
+									</div>
+									<div class="form-con clearfix">
+										<label for="midify_nickname" class="midify-label">昵称:</label>
+										<span class="midity-input">
+											<input type="text" placeholder="<%= data.nickname %>" id="midify_nickname" class="text-input">
+										</span>
+									</div>
+									<div class="form-con clearfix">
+										<label for="midify_intro" class="midify-label">个人介绍:</label>
+										<span class="midity-input">
+											<input type="text" placeholder="<%= data.intro %>" id="midify_intro" class="text-input">
+										</span>
+									</div>
+									<div class="form-con clearfix">
+										<label for="midify_phone" class="midify-label">手机号码:</label>
+										<span class="midity-input">
+											<input type="text" placeholder="<%= data.phonenum %>" id="midify_phonenum" class="text-input">
+										</span>
+									</div>
+									<div class="form-con clearfix">
+										<span for="midify_sex" class="midify-label">性别:</span>
+										<span class="midity-input midity-sex" data-sex="<%= data.sex %>">
+											<label for="">
+												<input type="radio" name="midify_gender" value="1" >
+												男
+											</label>
+											<label for="">
+												<input type="radio" name="midify_gender" value="2">
+												女
+											</label>
+										</span>			
+									</div>
+									<div class="submit">
+										<a href="javascript:;" id="midify_btn">提 交</a>
+										<a href="javascript:;" id="midify_back">返 回</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="self-basic">
+							<div class="o-hide">
+								<span class="item-title">我的昵称:</span>
+								<span class="nickname"><%= data.nickname %></span>
+							</div>
+							<div class="o-hide">
+								<span class="item-title">我的介绍:</span>
+								<span class="intro"><%= data.intro %></span>
+							</div>
+							<div class="o-hide">
+								<div class="gender-sele">
+									<span class="item-title">性别:</span>
+									<span data-sex="<%= data.sex %>" class="gender"></span>
+								</div>
+							</div>
+							<div class="o-hide">
+								<span class="item-title">手机号:</span>
+								<span class="phonenum"><%= data.phonenum %></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<%- include footer %>
+	</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="../js/user.js"></script>
+</html>

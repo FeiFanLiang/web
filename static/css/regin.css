@@ -1,0 +1,57 @@
+/*注册表单*/
+.regin{
+	padding-top: 100px;
+}
+.form-warp{
+	width: 900px;
+	margin:0 auto;
+	padding: 50px 0;
+	background: url(http://ms0.meituan.net/mywww/banner_bg.f7fd103e3b8c16b6f449cce43fc57f45.png);
+	background-size: cover;
+}
+.form-warp>div{
+	margin-top: 50px;
+	text-align: center;
+}
+.form-warp input{
+	border-radius: 3px;
+	height: 50px;
+	width: 300px;
+	line-height: 40px;
+	font-size: 18px;
+}
+.form-warp input:focus{
+	
+	box-shadow: 0 0 10px green;
+}
+.error-msg{
+	display: none;
+	width: 300px;
+	margin:20px auto 0;
+	border: 1px solid red;
+}
+#submit-btn{
+	display: inline-block;
+	padding: 12px 70px;
+	margin-top: 20px;
+	color: #e7edef;
+	font-size: 20px;
+	background-color: #21a4f1;	
+	border-radius: 45px;
+}
+.policy,.login{
+	color: #ca4747;
+}
+
+@media(max-width: 1200px){
+	
+}
+@media(max-width: 992px){
+	
+	
+}
+@media(max-width: 768px){
+	.form-warp{
+		width: 400px;
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="../css/comon.css">
+	<link rel="stylesheet" href="../css/regin.css">
+	<title>登录页</title>
+</head>
+<body>
+<%- include headnav %>
+<div class="container">
+<section class="regin" id="loginform">
+	<div class="form-warp">
+		<div class="form-title">
+			<h3>登录</h3>
+		</div>
+		<div class="username">
+			<input type="text" placeholder="输入您的用户名">
+			<div class="error-msg">用户名错误</div>
+
+		</div>
+		<div class="password">
+			<input type="password" placeholder="输入您的密码">
+			<div class="error-msg">密码错误</div>
+		</div>
+		
+		<div class="submit">
+			<a href="login/verify" id="login-btn">登 录</a>
+		</div>
+		<div class="redir">
+			<p>还没有账号？进入<a href="/regin">注册</a>界面</p>
+		</div>
+	</div>
+</section>
+<%- include footer %>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

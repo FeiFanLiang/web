@@ -1,0 +1,64 @@
+<nav class="topNav">
+		<div class="topNav-wrap">
+			<ul>
+				<li>
+					<a href="/">
+					<span>首页</span>
+					<span>Index</span>
+					</a>
+				</li>
+				<li>
+					<a href="/billboard">
+					<span>榜单</span>
+					<span>Billboard</span>
+					</a>
+				</li>
+				<li class="center">
+					<a href="/user">
+					<span>个人中心</span>
+					<span>Pecenter</span>
+					</a>
+				</li>
+				<li class="app">
+					<div class="app-img">
+						<img src="../images/app.png" alt="">
+					</div>
+					<a href="">
+					<span>APP下载</span>
+					<span>Download</span>
+
+					</a>
+				</li>
+				<li class="cart">
+					<a href="">
+					<i class="icon-cart"></i>
+					<span class="cart-num">
+					  <% if(locals.cartnum){ %>
+					  <%- locals.cartnum %> <% } else{%>
+					  <%= 0 %> <% } %>
+					</span>
+					<div class="num-change">+1</div>
+					</a>
+					<div class="login-msg">
+					<% if(!locals.nickname){ %>
+						点击<a href="/login">登录</a>
+					<%	}else{ %>
+						<div class="head-user">
+							<a href="/user"><%- locals.nickname %> </a>
+						</div>
+						<div class="log-off">
+							<a href="/login/logoff">
+							退出登录
+							</a>
+						</div>
+						<% } %>
+
+					</div>
+
+				</li>
+				
+			</ul>
+			<h1 class="topNav-log"></h1>
+		</div>
+		
+	</nav>
