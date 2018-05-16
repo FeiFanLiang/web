@@ -42,3 +42,4 @@ server.use('/user',user);
 server.use('/buy',buy);
 server.listen(3000);
 console.log('已经监听3000端口');
+//又加了一些注释
